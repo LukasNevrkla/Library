@@ -48,9 +48,9 @@ namespace Library_Manager.Controllers
 
 
         [HttpPut("{id}")]
-        public IActionResult PutBooks(int id, Books books)
+        public async Task<IActionResult> PutBooks(int id, Books books)
         {
-            var b = _context.Books.Find(id);
+            var b = await _context.Books.FindAsync(id);
             if (b == null)
             {
                 return NotFound();
@@ -64,7 +64,7 @@ namespace Library_Manager.Controllers
             _context.Update(b);
             _context.SaveChanges();
 
-            return RedirectToAction("Index");
+            return Ok(books);
         }
 
         // POST: api/Books

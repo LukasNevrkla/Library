@@ -12224,11 +12224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Programming\\Brigada\\Library_Manager\\Library_Manager\\Library_Manager.csproj",
+      "projectUniqueName": "F:\\Programming\\Brigada\\Uvodni_test\\Library_Manager\\Library_Manager\\Library_Manager.csproj",
       "projectName": "Library_Manager",
-      "projectPath": "F:\\Programming\\Brigada\\Library_Manager\\Library_Manager\\Library_Manager.csproj",
+      "projectPath": "F:\\Programming\\Brigada\\Uvodni_test\\Library_Manager\\Library_Manager\\Library_Manager.csproj",
       "packagesPath": "C:\\Users\\luky\\.nuget\\packages\\",
-      "outputPath": "F:\\Programming\\Brigada\\Library_Manager\\Library_Manager\\obj\\",
+      "outputPath": "F:\\Programming\\Brigada\\Uvodni_test\\Library_Manager\\Library_Manager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

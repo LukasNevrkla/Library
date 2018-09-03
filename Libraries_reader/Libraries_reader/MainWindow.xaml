@@ -4,64 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Libraries_reader"
+        xmlns:views = "clr-namespace:Libraries_reader.View" 
         mc:Ignorable="d"
         Title="Knihovna" Height="481" Width="1035" Background="White">
 
-
     <Grid Width="1030">
-        <Button Content="Reload" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="Reload_click" BorderBrush="Black" Foreground="Black" Background="White"/>
-        <Button Content="Create" HorizontalAlignment="Left" Margin="10,365,0,0" VerticalAlignment="Top" Width="100" Height="25" Click="Create_click" Background="White" BorderBrush="Black"/>
+        <Button Content="Reload" HorizontalAlignment="Left" Margin="10,74,0,0" 
+                VerticalAlignment="Top" Width="100" Height="30" Click="Reload_click" 
+                BorderBrush="Black" Foreground="Black" Background="White"/>
 
-        <ListView x:Name="l_view" HorizontalAlignment="Left" Height="350
-                  " Margin="120,10,0,0" VerticalAlignment="Top" Width="900">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Del." Width="30">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Name="Delete_button" Click="Delete_click" Width="AUTO" Height="AUTO" Content="X" BorderBrush="White" Foreground="Black" Background="White"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="ID" Width="100">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBox Name="ID" Text="{Binding Path=ID}" IsReadOnly = "True" Width="AUTO" KeyDown="OnKeyDownHandler" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Jméno" Width="200" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBox Name="Name" Text="{Binding Path=Name}" Width="AUTO" KeyDown="OnKeyDownHandler" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Autor" Width="200" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBox Name="Author" Text="{Binding Path=Author}" Width="AUTO" KeyDown="OnKeyDownHandler" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Překlad" Width="200" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBox Name="Translation" Text="{Binding Path=Translation}" Width="AUTO" KeyDown="OnKeyDownHandler" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Datum vydání" Width="190" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBox Name="PublicationDate" Text="{Binding Path=PublicationDate}" Width="AUTO"  KeyDown="OnKeyDownHandler" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Grid x:Name="New_data_grid" HorizontalAlignment="Left" Height="25" Margin="120,365,0,0" VerticalAlignment="Top" Width="900">
+        <Button Content="Create" HorizontalAlignment="Left" Margin="10,365,0,0" 
+                VerticalAlignment="Top" Width="100" Height="25" Click="Create_click" 
+                Background="White" BorderBrush="Black"/>
+
+
+        <views:DataView x:Name = "DataViewControl" Margin="120,10,-120,-10" Grid.ColumnSpan="2"/>
+
+        <Grid x:Name="New_data_grid" HorizontalAlignment="Left" Height="25" Margin="120,365,0,0" VerticalAlignment="Top" Width="900" Grid.ColumnSpan="2">
             <TextBox x:Name="TB_NewData1" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="100" Text="-" TextAlignment="Center" IsReadOnly="True"/>
             <TextBox x:Name="TB_NewData2" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" Margin="100,0,0,0"/>
             <TextBox x:Name="TB_NewData3" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" Margin="300,0,0,0"/>

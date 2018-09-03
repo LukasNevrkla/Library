@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="Libraries_reader.View.DataView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Libraries_reader.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="900">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="Delete">
+            <Button Name="Delete_button" Click="Delete_click" Content="X" BorderBrush="White" Foreground="Black" Background="White"/>
+        </DataTemplate>
+        <DataTemplate x:Key="ID">
+            <TextBlock Text="{Binding ID}"  TextAlignment="Center"/>
+        </DataTemplate>
+        <DataTemplate x:Key="Name">
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" KeyUp="OnKeyUpHandler" HorizontalContentAlignment="Center"/>
+        </DataTemplate> 
+        <DataTemplate x:Key="Author">
+            <TextBox Text="{Binding Author, UpdateSourceTrigger=PropertyChanged}" KeyUp="OnKeyUpHandler" HorizontalContentAlignment="Center"/>
+        </DataTemplate>
+        <DataTemplate x:Key="Translation">
+            <TextBox Text="{Binding Translation, UpdateSourceTrigger=PropertyChanged}" KeyUp="OnKeyUpHandler" HorizontalContentAlignment="Center"/>
+        </DataTemplate>
+        <DataTemplate x:Key="PublicationDate">
+            <TextBox Text="{Binding PublicationDate, UpdateSourceTrigger=PropertyChanged}" KeyUp="OnKeyUpHandler" HorizontalContentAlignment="Center"/>
+        </DataTemplate>
+    </UserControl.Resources>
+
+        <Grid>
+        <ListView x:Name="book_list_view" HorizontalAlignment="Left" 
+                  VerticalAlignment="Top" Width="AUTO" Height="300">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="del." Width="30" CellTemplate="{StaticResource Delete}"/>
+                    <GridViewColumn Header="ID" Width="50" CellTemplate="{StaticResource ID}"/>
+                    <GridViewColumn Header="Jméno" Width="100" CellTemplate="{StaticResource Name}"/>
+                    <GridViewColumn Header="Autor" Width="100" CellTemplate="{StaticResource Author}"/>
+                    <GridViewColumn Header="Překlad" Width="100" CellTemplate="{StaticResource Translation}"/>
+                    <GridViewColumn Header="Datum vydání" Width="100" CellTemplate="{StaticResource PublicationDate}"/>
+                </GridView>
+            </ListView.View>
+
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="IsSelected" Value="True"/>
+                        </Trigger>
+                    </Style.Triggers>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            
+        </ListView>
+    </Grid>
+</UserControl>

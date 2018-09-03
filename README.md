@@ -1,6 +1,6 @@
 # Library
 
-Pro první spuštìní zapnìte Net.Core aplikaci (Library_Manager),
-pro pøipojení k databázi je zatím potøeba v kodu zmìnit názesv serveru
-na kterém SQL databaze bìí a její jméno. Pak staèí zapnout WPF aplikaci 
-(Library_reader) a naètou se data z databáze podle modelu Book.
+Pro prvnÃ­ spuÅ¡tÄ›nÃ­ zapnÄ›te Net.Core aplikaci (Library_Manager),
+pro pÅ™ipojenÃ­ k databÃ¡zi je zatÃ­m potÅ™eba v kodu zmÄ›nit nÃ¡zev serveru
+na kterÃ©m SQL databaze bÄ›Å¾Ã­ a jejÃ­ jmÃ©no (V zÃ¡kladu nastavena na Library). Pak staÄÃ­ zapnout WPF aplikaci 
+(Library_reader) a naÄtou se data z databÃ¡ze podle modelu Book.

@@ -13,19 +13,29 @@ namespace Libraries_reader.ModelView
     {
         public static string URL="https://localhost:44302/api/Books";
         public static string ORDER = "ID";
+        public static ListView DataListView;
 
         //Udela GET pozadavek a vysledek vlozi do tabulky//
-        public async Task ReloadListView(ListView _list_view)
+        public async Task ReloadListView()
         {
-            RestRequests<List<Book>> rest = new RestRequests<List<Book>>();
-            //List<Book> books = await rest.GetRequest("https://localhost:44302/api/Books");
-            Books.books = await rest.GetRequest(URL, ORDER);
-
-            _list_view.Items.Clear();
-
-            foreach (Book b in Books.books)
+            if (MainControll.DataListView != null)
             {
-                _list_view.Items.Add(b);
+                RestRequests<List<Book>> rest = new RestRequests<List<Book>>();
+                //List<Book> books = await rest.GetRequest("https://localhost:44302/api/Books");
+
+                string SQL_qurey = "SELECT * FROM dbo.Books ORDER BY ";
+                SQL_qurey += MainControll.ORDER;
+                Books.books = await rest.GetRequest(MainControll.URL, SQL_qurey);
+
+                if (Books.books != null)
+                {
+                    MainControll.DataListView.Items.Clear();
+
+                    foreach (Book b in Books.books)
+                    {
+                        MainControll.DataListView.Items.Add(b);
+                    }
+                }
             }
         }
     }

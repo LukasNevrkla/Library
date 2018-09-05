@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\Programming\GitHub\Libraries_reader\Libraries_reader\obj\Debug\
+F:\Programming\GitHub\Library\Libraries_reader\Libraries_reader\obj\Debug\
 Libraries_reader
 none
 false
 DEBUG;TRACE
-F:\Programming\GitHub\Libraries_reader\Libraries_reader\App.xaml
-2-445273026
+F:\Programming\GitHub\Library\Libraries_reader\Libraries_reader\App.xaml
+32024737081
 
-14-1620998993
-151037713000
-MainWindow.xaml;View\DataView.xaml;
+15-491475617
+15-1810413446
+MainWindow.xaml;View\DataView.xaml;View\Filtering_view.xaml;
 
-False
+True
 

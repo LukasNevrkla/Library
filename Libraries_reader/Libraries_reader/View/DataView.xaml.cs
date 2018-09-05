@@ -22,15 +22,14 @@ namespace Libraries_reader.View
     /// </summary>
     public partial class DataView : UserControl
     {
-        //book_list_view lze zavolat z jinych trid//
-        public ListView BookListView
-        { get { return book_list_view; } set { value = book_list_view; } }
-
         MainControll control = new MainControll();
 
         public DataView()
         {
             InitializeComponent();
+
+            MainControll.DataListView = book_list_view;
+           // control.ReloadListView();
         }
 
         private async void Delete_click(object sender, RoutedEventArgs e)
@@ -48,7 +47,7 @@ namespace Libraries_reader.View
             await rest.DeleteRequest(addres, index);
    
             //Prenacteni listview//
-            await control.ReloadListView(book_list_view);
+            await control.ReloadListView();
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -63,8 +62,6 @@ namespace Libraries_reader.View
 
                 var item = (sender as TextBox).DataContext;
                 Book new_book = (Book)item;
-
-                //Book ba = (Book)book_list_view.SelectedItems[0];
 
                 switch (data_name)
                 {
@@ -91,15 +88,15 @@ namespace Libraries_reader.View
                 int index = book_list_view.Items.IndexOf(item);
                 Book b = (Book)book_list_view.Items.GetItemAt(index);
                 index = b.ID;
-                
+
                 //Book new_book = (Book)book_list_view.SelectedItems[0];
 
 
-                string addres = "https://localhost:44302/api/Books/";
+                string addres = MainControll.URL;
                 RestRequests<Book> rest = new RestRequests<Book>();
 
                 await rest.PutRequest(addres, new_book.ID, new_book);
-                await control.ReloadListView(book_list_view);
+                await control.ReloadListView();
             }
         }
     }

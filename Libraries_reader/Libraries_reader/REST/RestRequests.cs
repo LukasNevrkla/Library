@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Windows;
+using System.Threading;
 
 namespace Libraries_reader.REST
 {
@@ -32,7 +33,7 @@ namespace Libraries_reader.REST
 
             else return default(T);
         }
-
+        /*
         //Funkce je rozsirena o parametry//
         public async Task<T> GetRequest(string requestUri, string order)
         {
@@ -48,6 +49,30 @@ namespace Libraries_reader.REST
             }
 
             else return default(T);
+        }*/
+
+        public async Task<T> GetRequest(string requestUri, string SQL_query)
+        {
+            //SQL_query = "SELECT * FROM dbo.Books ORDER BY publication_date";
+            CancellationTokenSource cts = new CancellationTokenSource();
+            try
+            {
+                cts.CancelAfter(2500);
+                T data;
+                if (SQL_query != null) requestUri += "/?query=" + SQL_query;
+
+                HttpResponseMessage response = await client.GetAsync(requestUri);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    data = JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
+                    return data;
+                }
+            }
+            catch { MessageBox.Show("GET požadavek selhal.", "Error"); }
+
+            return default(T);
+            
         }
 
         public async Task PutRequest(string requestUri, int id, T model)

@@ -33,14 +33,13 @@ namespace Libraries_reader
             InitializeComponent();
 
             TB_URL.Text = MainControll.URL;
-
-            control.ReloadListView(DataViewControl.BookListView);
+            //control.ReloadListView();
         }
 
 
         public async void Reload_click(object sender, RoutedEventArgs e)
         {
-            await control.ReloadListView(DataViewControl.BookListView);
+            await control.ReloadListView();
         }
 
         private async void Create_click(object sender, RoutedEventArgs e)
@@ -61,7 +60,7 @@ namespace Libraries_reader
 
             RestRequests<Book> rest = new RestRequests<Book>();
             await rest.PostRequest(addres, new_book);
-            await control.ReloadListView(DataViewControl.BookListView);
+            await control.ReloadListView();
         }
 
         private void URL_key_up(object sender, KeyEventArgs e)
@@ -71,13 +70,13 @@ namespace Libraries_reader
                 MainControll.URL = TB_URL.Text;
             }
         }
-
+        /*
         private async void OrderChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBoxItem cb = (ComboBoxItem)(sender as ComboBox).SelectedItem;
             MainControll.ORDER=cb.Name;
 
             await control.ReloadListView(DataViewControl.BookListView);
-        }
+        }*/
     }
 }

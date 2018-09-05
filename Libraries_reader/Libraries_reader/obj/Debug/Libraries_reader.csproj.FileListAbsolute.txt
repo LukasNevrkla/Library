@@ -64,3 +64,5 @@ F:\Programming\GitHub\Library\Libraries_reader\Libraries_reader\obj\Debug\Librar
 F:\Programming\GitHub\Library\Libraries_reader\Libraries_reader\obj\Debug\Libraries_reader.csproj.CopyComplete
 F:\Programming\GitHub\Library\Libraries_reader\Libraries_reader\obj\Debug\Libraries_reader.exe
 F:\Programming\GitHub\Library\Libraries_reader\Libraries_reader\obj\Debug\Libraries_reader.pdb
+F:\Programming\GitHub\Library\Libraries_reader\Libraries_reader\obj\Debug\View\Filtering_view.g.cs
+F:\Programming\GitHub\Library\Libraries_reader\Libraries_reader\obj\Debug\View\Filtering_view.baml

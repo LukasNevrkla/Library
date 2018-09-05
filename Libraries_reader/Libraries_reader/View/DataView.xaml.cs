@@ -43,7 +43,7 @@ namespace Libraries_reader.View
             Book b = (Book)book_list_view.Items.GetItemAt(index);
             index = b.ID;
 
-            string addres = "https://localhost:44302/api/Books";
+            string addres = MainControll.URL;
             RestRequests<List<Book>> rest = new RestRequests<List<Book>>();
             await rest.DeleteRequest(addres, index);
    

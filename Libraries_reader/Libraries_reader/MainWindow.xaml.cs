@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 
 using Libraries_reader.REST;
 using Libraries_reader.ModelView;
-//using Libraries_reader.Model;
 
 
 
@@ -25,7 +24,7 @@ namespace Libraries_reader
     /// Interakční logika pro MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {     
+    {
         MainControll control = new MainControll();
 
 
@@ -33,12 +32,14 @@ namespace Libraries_reader
         {
             InitializeComponent();
 
+            TB_URL.Text = MainControll.URL;
+
             control.ReloadListView(DataViewControl.BookListView);
         }
 
-        
+
         public async void Reload_click(object sender, RoutedEventArgs e)
-        {   
+        {
             await control.ReloadListView(DataViewControl.BookListView);
         }
 
@@ -50,16 +51,32 @@ namespace Libraries_reader
             new_book.Author = TB_NewData3.Text;
             new_book.Translation = TB_NewData4.Text;
 
-            try { new_book.PublicationDate = Convert.ToInt32(TB_NewData5.Text); }   
+            try { new_book.PublicationDate = Convert.ToInt32(TB_NewData5.Text); }
             catch
             {
                 //MessageBox.Show("Nezadali jste číslo!!", "Error");// 
             }
 
-            string addres = "https://localhost:44302/api/Books";
+            string addres = MainControll.URL;
 
             RestRequests<Book> rest = new RestRequests<Book>();
             await rest.PostRequest(addres, new_book);
+            await control.ReloadListView(DataViewControl.BookListView);
+        }
+
+        private void URL_key_up(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                MainControll.URL = TB_URL.Text;
+            }
+        }
+
+        private async void OrderChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem cb = (ComboBoxItem)(sender as ComboBox).SelectedItem;
+            MainControll.ORDER=cb.Name;
+
             await control.ReloadListView(DataViewControl.BookListView);
         }
     }

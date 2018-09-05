@@ -33,6 +33,23 @@ namespace Libraries_reader.REST
             else return default(T);
         }
 
+        //Funkce je rozsirena o parametry//
+        public async Task<T> GetRequest(string requestUri, string order)
+        {
+            T data;
+            if (order!=null) requestUri += "/?order=" + order;
+
+            HttpResponseMessage response = await client.GetAsync(requestUri);
+
+            if (response.IsSuccessStatusCode)
+            {
+                data = JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
+                return data;
+            }
+
+            else return default(T);
+        }
+
         public async Task PutRequest(string requestUri, int id, T model)
         {
             try { requestUri += "/" + id.ToString(); }

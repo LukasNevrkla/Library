@@ -6,26 +6,39 @@
         xmlns:local="clr-namespace:Libraries_reader"
         xmlns:views = "clr-namespace:Libraries_reader.View" 
         mc:Ignorable="d"
-        Title="Knihovna" Height="481" Width="1035" Background="White">
+        Title="Knihovna" Height="470" Width="650" Background="White" ResizeMode="NoResize">
 
     <Grid Width="1030">
-        <Button Content="Reload" HorizontalAlignment="Left" Margin="10,74,0,0" 
+        <Button Content="Načíst znovu" HorizontalAlignment="Left" Margin="10,330,0,0" 
                 VerticalAlignment="Top" Width="100" Height="30" Click="Reload_click" 
                 BorderBrush="Black" Foreground="Black" Background="White"/>
 
-        <Button Content="Create" HorizontalAlignment="Left" Margin="10,365,0,0" 
+        <Button Content="Vytvořit" HorizontalAlignment="Left" Margin="10,365,0,0" 
                 VerticalAlignment="Top" Width="100" Height="25" Click="Create_click" 
                 Background="White" BorderBrush="Black"/>
 
 
-        <views:DataView x:Name = "DataViewControl" Margin="120,10,-120,-10" Grid.ColumnSpan="2"/>
+        <views:DataView x:Name = "DataViewControl" Margin="120,58,-120,-58"/>
 
         <Grid x:Name="New_data_grid" HorizontalAlignment="Left" Height="25" Margin="120,365,0,0" VerticalAlignment="Top" Width="900" Grid.ColumnSpan="2">
-            <TextBox x:Name="TB_NewData1" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="100" Text="-" TextAlignment="Center" IsReadOnly="True"/>
-            <TextBox x:Name="TB_NewData2" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" Margin="100,0,0,0"/>
-            <TextBox x:Name="TB_NewData3" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" Margin="300,0,0,0"/>
-            <TextBox x:Name="TB_NewData4" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" Margin="500,0,0,0"/>
-            <TextBox x:Name="TB_NewData5" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="190" Margin="700,0,0,0"/>
+            <TextBox x:Name="TB_NewData1" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="50" Text="-" TextAlignment="Center" IsReadOnly="True" Margin="30,0,0,0"/>
+            <TextBox x:Name="TB_NewData2" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="100" Margin="80,0,0,0"/>
+            <TextBox x:Name="TB_NewData3" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="100" Margin="180,0,0,0"/>
+            <TextBox x:Name="TB_NewData4" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="100" Margin="280,0,0,0"/>
+            <TextBox x:Name="TB_NewData5" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="100" Margin="380,0,0,0"/>
         </Grid>
+        <TextBlock x:Name="T_URL" Text="URL:" Height="20" TextWrapping="Wrap" Width="30" TextAlignment="Center" Margin="120,25,880,374"/>
+        <TextBox x:Name="TB_URL" KeyUp="URL_key_up" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" Margin="155,20,0,374"/>
+        <Label Content="*Po změnění URL a textu v tabulce stiskněte Enter pro uložení." HorizontalAlignment="Left" Margin="10,403,0,0" VerticalAlignment="Top" Width="620" HorizontalContentAlignment="Center"/>
+
+        <ComboBox x:Name="CB_order" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="OrderChanged" SelectedIndex="0">
+            <ComboBoxItem Name="ID">ID</ComboBoxItem>
+            <ComboBoxItem Name="Name">Jméno</ComboBoxItem>
+            <ComboBoxItem Name="Author">Autor</ComboBoxItem>
+            <ComboBoxItem Name="Translation">Překlad</ComboBoxItem>
+            <ComboBoxItem Name="Publication_date">Vydání</ComboBoxItem>
+        </ComboBox>
+        
+        <TextBlock x:Name="T_URL_Copy" Text="Seředit podle:" TextWrapping="Wrap" TextAlignment="Center" Height="25" Width="100" Margin="10,97,920,319" />
     </Grid>
 </Window>

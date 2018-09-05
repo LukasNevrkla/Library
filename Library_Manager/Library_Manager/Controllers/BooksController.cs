@@ -22,9 +22,20 @@ namespace Library_Manager.Controllers
 
         // GET: api/Books
         [HttpGet]
-        public IEnumerable<Books> GetBooks()
+        public IActionResult GetBooks(string order) //api/Books?order=Name
         {
-            return _context.Books;
+            //return _context.Books;
+
+            try
+            {
+                string Query = "SELECT * FROM dbo.Books ";
+                if (order != null) Query += "ORDER BY " + order + ";";
+
+                return Ok(_context.Books.FromSql(Query).ToList());
+            }
+            catch { }
+
+            return NotFound();
         }
 
         // GET: api/Books/5

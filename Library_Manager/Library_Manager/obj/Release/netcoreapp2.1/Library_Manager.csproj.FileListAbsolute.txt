@@ -1,0 +1,14 @@
+F:\Programming\GitHub\Library\Library_Manager\Library_Manager\bin\Release\netcoreapp2.1\Library_Manager.deps.json
+F:\Programming\GitHub\Library\Library_Manager\Library_Manager\bin\Release\netcoreapp2.1\Library_Manager.runtimeconfig.json
+F:\Programming\GitHub\Library\Library_Manager\Library_Manager\bin\Release\netcoreapp2.1\Library_Manager.runtimeconfig.dev.json
+F:\Programming\GitHub\Library\Library_Manager\Library_Manager\bin\Release\netcoreapp2.1\Library_Manager.dll
+F:\Programming\GitHub\Library\Library_Manager\Library_Manager\bin\Release\netcoreapp2.1\Library_Manager.pdb
+F:\Programming\GitHub\Library\Library_Manager\Library_Manager\obj\Release\netcoreapp2.1\Library_Manager.csprojAssemblyReference.cache
+F:\Programming\GitHub\Library\Library_Manager\Library_Manager\obj\Release\netcoreapp2.1\Library_Manager.csproj.CoreCompileInputs.cache
+F:\Programming\GitHub\Library\Library_Manager\Library_Manager\obj\Release\netcoreapp2.1\Library_Manager.RazorAssemblyInfo.cache
+F:\Programming\GitHub\Library\Library_Manager\Library_Manager\obj\Release\netcoreapp2.1\Library_Manager.RazorAssemblyInfo.cs
+F:\Programming\GitHub\Library\Library_Manager\Library_Manager\obj\Release\netcoreapp2.1\Library_Manager.AssemblyInfoInputs.cache
+F:\Programming\GitHub\Library\Library_Manager\Library_Manager\obj\Release\netcoreapp2.1\Library_Manager.AssemblyInfo.cs
+F:\Programming\GitHub\Library\Library_Manager\Library_Manager\obj\Release\netcoreapp2.1\Library_Manager.RazorTargetAssemblyInfo.cache
+F:\Programming\GitHub\Library\Library_Manager\Library_Manager\obj\Release\netcoreapp2.1\Library_Manager.dll
+F:\Programming\GitHub\Library\Library_Manager\Library_Manager\obj\Release\netcoreapp2.1\Library_Manager.pdb

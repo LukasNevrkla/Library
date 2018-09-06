@@ -29,6 +29,6 @@
         </Grid>
         <TextBlock x:Name="T_URL" Text="URL:" Height="20" TextWrapping="Wrap" Width="30" TextAlignment="Center" Margin="120,25,880,374"/>
         <TextBox x:Name="TB_URL" KeyUp="URL_key_up" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" Margin="155,20,0,374"/>
-        <Label Content="*Po změnění URL a textu v tabulce stiskněte Enter pro uložení." HorizontalAlignment="Left" Margin="10,403,0,0" VerticalAlignment="Top" Width="620" HorizontalContentAlignment="Center"/>
+        <Label Content="*Po zadání nového URL, vyhledání, nebo textu v tabulce stiskněte Enter pro uložení." HorizontalAlignment="Left" Margin="10,403,0,0" VerticalAlignment="Top" Width="620" HorizontalContentAlignment="Center"/>
     </Grid>
 </Window>

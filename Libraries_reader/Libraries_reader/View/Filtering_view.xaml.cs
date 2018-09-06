@@ -41,11 +41,21 @@ namespace Libraries_reader.View
         private async void FilterChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBoxItem cb = (ComboBoxItem)(sender as ComboBox).SelectedItem;
-            //String name = cb.Name;
-            //name = name.Remove(name.Length - 1);
-            //MainControll.ORDER = name;
+            String name = cb.Name;
+            name = name.Remove(name.Length - 1);
+            MainControll.SEARCH_BY = name;
 
             await control.ReloadListView();
+        }
+
+        private async void Serarch_key_up(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                MainControll.SEARCH = TB_search.Text;
+
+                await control.ReloadListView();
+            }
         }
     }
 }

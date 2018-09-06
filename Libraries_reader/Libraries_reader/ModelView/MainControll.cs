@@ -13,6 +13,9 @@ namespace Libraries_reader.ModelView
     {
         public static string URL="https://localhost:44302/api/Books";
         public static string ORDER = "ID";
+        public static string SEARCH_BY="Name";
+        public static string SEARCH;
+
         public static ListView DataListView;
 
         //Udela GET pozadavek a vysledek vlozi do tabulky//
@@ -23,8 +26,10 @@ namespace Libraries_reader.ModelView
                 RestRequests<List<Book>> rest = new RestRequests<List<Book>>();
                 //List<Book> books = await rest.GetRequest("https://localhost:44302/api/Books");
 
-                string SQL_qurey = "SELECT * FROM dbo.Books ORDER BY ";
-                SQL_qurey += MainControll.ORDER;
+                string SQL_qurey = "SELECT * FROM dbo.Books ";
+                if (SEARCH != null) SQL_qurey += " WHERE " + MainControll.SEARCH_BY + " LIKE '" + MainControll.SEARCH + "%'";
+                SQL_qurey += " ORDER BY " + MainControll.ORDER;
+
                 Books.books = await rest.GetRequest(MainControll.URL, SQL_qurey);
 
                 if (Books.books != null)

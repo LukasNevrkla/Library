@@ -17,7 +17,7 @@
         </ComboBox>
 
         <TextBlock x:Name="T_1" Text="Vyhledat:" TextWrapping="Wrap" TextAlignment="Center" Height="25" Width="100" Foreground="White" Margin="0,70,0,156"/>
-        <TextBox x:Name="TB_search" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Center" Width="100" Margin="0,95,0,131"/>
+        <TextBox x:Name="TB_search" KeyUp="Serarch_key_up" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Center" Width="100" Margin="0,95,0,131"/>
         <ComboBox x:Name="CB_order_Copy" Margin="0,149,0,0" VerticalAlignment="Top" Height="22" Width="100" SelectionChanged="FilterChanged" SelectedIndex="1">
             <ComboBoxItem x:Name="ID1" Content="ID"/>
             <ComboBoxItem x:Name="Name1" Content="Jméno"/>

@@ -29,7 +29,7 @@ namespace Libraries_reader.View
             InitializeComponent();
 
             MainControll.DataListView = book_list_view;
-           // control.ReloadListView();
+            control.ReloadListView();
         }
 
         private async void Delete_click(object sender, RoutedEventArgs e)
@@ -51,7 +51,7 @@ namespace Libraries_reader.View
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
-            { }
+        { }
 
         private async void OnKeyUpHandler(object sender, KeyEventArgs e)
         {

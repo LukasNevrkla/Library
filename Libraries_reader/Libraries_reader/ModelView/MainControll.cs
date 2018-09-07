@@ -24,7 +24,6 @@ namespace Libraries_reader.ModelView
             if (MainControll.DataListView != null)
             {
                 RestRequests<List<Book>> rest = new RestRequests<List<Book>>();
-                //List<Book> books = await rest.GetRequest("https://localhost:44302/api/Books");
 
                 string SQL_qurey = "SELECT * FROM dbo.Books ";
                 if (SEARCH != null) SQL_qurey += " WHERE " + MainControll.SEARCH_BY + " LIKE '" + MainControll.SEARCH + "%'";

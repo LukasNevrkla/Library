@@ -27,12 +27,7 @@ namespace Libraries_reader
         private int? _PublicationDate;
 
         protected void OnPropertyChanged(string name)
-        {/*
-            if (Books.books != null)
-            {
-                Book b = Books.books.Find(u => u.ID == ID);
-            }*/
-
+        {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null)
             {

@@ -19,32 +19,12 @@ namespace Library_Manager.Controllers
         {
             _context = context;
         }
-        /*
-        // GET: api/Books
-        [HttpGet]
-        public IActionResult GetBooks(string order) //api/Books?order=Name
-        {
-            //return _context.Books;
 
-            try
-            {
-                string Query = "SELECT * FROM dbo.Books ";
-                if (order != null) Query += "ORDER BY " + order + ";";
-
-                return Ok(_context.Books.FromSql(Query).ToList());
-            }
-            catch { }
-
-            return NotFound();
-        }*/
         [HttpGet]
         public IActionResult GetBooks(string query) //api/Books?query=...
         {
             try
-            {/*
-                string Query = "SELECT * FROM dbo.Books ";
-                if (order != null) Query += "ORDER BY " + order + ";";
-                */
+            {
                 if (query!=null) return Ok(_context.Books.FromSql(query).ToList());
                 else return Ok(_context.Books);
             }

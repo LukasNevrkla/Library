@@ -30,8 +30,6 @@ namespace Library_Manager
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            //var connection = @"Server=PC_LUKY;Database=Library;Trusted_Connection=True;ConnectRetryCount=0";
-            //services.AddDbContext<LibraryContext>(options => options.UseSqlServer(connection));
             services.AddDbContext<LibraryContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
@@ -56,14 +54,6 @@ namespace Library_Manager
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
-            /*
-            {
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
-            app.UseMvc();*/
         }
     }
 }

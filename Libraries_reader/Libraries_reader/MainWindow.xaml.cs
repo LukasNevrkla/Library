@@ -33,7 +33,6 @@ namespace Libraries_reader
             InitializeComponent();
 
             TB_URL.Text = MainControll.URL;
-            //control.ReloadListView();
         }
 
 
@@ -70,13 +69,5 @@ namespace Libraries_reader
                 MainControll.URL = TB_URL.Text;
             }
         }
-        /*
-        private async void OrderChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBoxItem cb = (ComboBoxItem)(sender as ComboBox).SelectedItem;
-            MainControll.ORDER=cb.Name;
-
-            await control.ReloadListView(DataViewControl.BookListView);
-        }*/
     }
 }
